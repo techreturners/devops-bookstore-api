@@ -15,4 +15,5 @@ workflows:
           image: devops-bookstore-api
           tag: '1.$CIRCLE_BUILD_NUM'
           registry-url: eu.gcr.io
-          setup-remote-docker: true
+          requires:
+            - "python/test"
