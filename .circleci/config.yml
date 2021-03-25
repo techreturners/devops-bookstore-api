@@ -12,7 +12,7 @@ workflows:
           pkg-manager: pipenv
           test-tool: unittest 
       - aws-ecr/build-and-push-image:
-          repo: "${AWS_ECR_REPO}"
+          repo: devops-bookstore-api
           tag: '1.$CIRCLE_BUILD_NUM'
           requires:
             - "python/test"
