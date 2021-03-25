@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.3.3
+  azure-acr: circleci/azure-acr@0.2.0
+
+workflows:
+  test-build-push-image:
+    jobs:
+      - python/test:
+          args: '--dev'
+          pkg-manager: pipenv
+          test-tool: unittest 
+      - azure-acr/build-and-push-image:
+          login-server-name: devopsupskilldre534.azurecr.io
+          registry-name: devopsupskilldre534
+          repo: devops-bookstore-api
+          tag: '1.$CIRCLE_BUILD_NUM'
+          requires:
+            - "python/test"
