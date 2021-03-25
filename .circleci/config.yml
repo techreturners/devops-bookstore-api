@@ -2,13 +2,18 @@ version: 2.1
 
 orbs:
   python: circleci/python@1.3.3
-workflows:
-  main:
-    jobs:
-      - setup_remote_docker:
-          version: 20.10.5
+
+jobs:
+  test: 
+    docker:
+      - image: cimg/base:2020.01
+    steps:
       - python/test:
           args: '--dev'
           pkg-manager: pipenv
           test-tool: unittest
-      - run: docker build -t devops-bookstore-api:${CIRCLE_BUILD_NUM} .
+
+workflows:
+  test-build-push-image:
+    jobs:
+      - test
