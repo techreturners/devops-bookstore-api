@@ -1,17 +1,14 @@
 version: 2.1
 
-jobs:
-  dockerbuild:
-    steps:
-      - run: docker build -t devops-bookstore-api:${CIRCLE_BUILD_NUM} .
-
 orbs:
   python: circleci/python@1.3.3
 workflows:
   main:
     jobs:
+      - setup_remote_docker:
+          version: 20.10.5
       - python/test:
           args: '--dev'
           pkg-manager: pipenv
           test-tool: unittest
-      - dockerbuild
+      - run: docker build -t devops-bookstore-api:${CIRCLE_BUILD_NUM} .
