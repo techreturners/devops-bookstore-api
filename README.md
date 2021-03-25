@@ -26,6 +26,24 @@ followed by
 pipenv run python api.py
 ```
 
+### Running Unit Tests
+
+The tests can be ran in the same manner as running the application.
+
+Ensure you are in the root of the project and run:
+
+```
+pip install pipenv
+```
+
+Once **pipenv** is installed you can run the application locally by running:
+
+```
+pipenv run python -m unittest
+```
+
+
+
 ### Running in Docker
 
 The application can be deployed as a Docker container.

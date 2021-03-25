@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Resource, Api, reqparse, abort, marshal, fields
+from flask_restful import Resource, Api, reqparse, marshal, fields
 from flask_cors import CORS
 
 # Initialize Flask
