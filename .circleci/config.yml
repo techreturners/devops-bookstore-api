@@ -5,8 +5,7 @@ orbs:
 
 jobs:
   test: 
-    docker:
-      - image: cimg/base:2020.01
+    executor: python/default
     steps:
       - python/test:
           args: '--dev'
