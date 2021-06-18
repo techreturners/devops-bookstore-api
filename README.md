@@ -26,6 +26,8 @@ followed by
 pipenv run python api.py
 ```
 
+NOTE: **pipenv** can be tempremental and varies from machine to machine if the above steps do not work skip to **Running in Docker** below
+
 ### Running in Docker
 
 The application can be deployed as a Docker container.
