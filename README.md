@@ -4,7 +4,25 @@ A Python [Flask REST API](https://blog.miguelgrinberg.com/post/designing-a-restf
 
 ## Instructions
 
-### Running Locally
+### Running in Docker
+
+The application can be deployed as a Docker container.
+
+Firstly build the Docker image
+
+```
+docker build -t bookstore-api:1.0 .
+```
+
+Once the image has built you can start up the container by running:
+
+```
+docker run --rm -it -p 5000:5000 bookstore-api:1.0
+```
+
+Then you should be able to open up your browser and head to [http://localhost:5000/books](http://localhost:5000/books) to see the JSON response
+
+### (Optional) Running Locally
 
 The instructions assume that you have Python 3 installed.
 
@@ -27,22 +45,4 @@ pipenv run python api.py
 ```
 
 NOTE: **pipenv** can be tempremental and varies from machine to machine if the above steps do not work skip to **Running in Docker** below
-
-### Running in Docker
-
-The application can be deployed as a Docker container.
-
-Firstly build the Docker image
-
-```
-docker build -t bookstore-api:1.0 .
-```
-
-Once the image has built you can start up the container by running:
-
-```
-docker run --rm -it -p 5000:5000 bookstore-api:1.0
-```
-
-Then you should be able to open up your browser and head to [http://localhost:5000/books](http://localhost:5000/books) to see the JSON response
 
