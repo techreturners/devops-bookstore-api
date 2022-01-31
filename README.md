@@ -6,7 +6,25 @@ Currently being built via CircleCI
 
 ## Instructions
 
-### Running Locally
+### Running in Docker
+
+The application can be deployed as a Docker container.
+
+Firstly build the Docker image
+
+```
+docker build -t bookstore-api:1.0 .
+```
+
+Once the image has built you can start up the container by running:
+
+```
+docker run --rm -it -p 5050:5000 bookstore-api:1.0
+```
+
+Then you should be able to open up your browser and head to [http://localhost:5050/books](http://localhost:5050/books) to see the JSON response
+
+### (Optional) Running Locally
 
 The instructions assume that you have Python 3 installed.
 
@@ -28,7 +46,9 @@ followed by
 pipenv run python api.py
 ```
 
-### Running Unit Tests
+NOTE: **pipenv** can be tempremental and varies from machine to machine if the above steps do not work skip to **Running in Docker** below
+
+### (Optional) Running Unit Tests
 
 The tests can be ran in the same manner as running the application.
 
@@ -44,23 +64,4 @@ Once **pipenv** is installed you can run the application locally by running:
 pipenv run python -m unittest
 ```
 
-
-
-### Running in Docker
-
-The application can be deployed as a Docker container.
-
-Firstly build the Docker image
-
-```
-docker build -t bookstore-api:1.0 .
-```
-
-Once the image has built you can start up the container by running:
-
-```
-docker run --rm -it -p 5000:5000 bookstore-api:1.0
-```
-
-Then you should be able to open up your browser and head to [http://localhost:5000/books](http://localhost:5000/books) to see the JSON response
 
