@@ -1,0 +1,12 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.5.0
+
+workflows:
+  test-build-push-image:
+    jobs:
+      - python/test:
+          args: '--dev'
+          pkg-manager: pipenv
+          test-tool: unittest 
