@@ -22,27 +22,3 @@ docker run --rm -it -p 5050:5000 bookstore-api:1.0
 
 Then you should be able to open up your browser and head to [http://localhost:5050/books](http://localhost:5050/books) to see the JSON response
 
-### (Optional) Running Locally
-
-The instructions assume that you have Python 3 installed.
-
-If you do not have `pipenv` installed you'll need to install this first
-
-```
-pip install pipenv
-```
-
-Once **pipenv** is installed you can run the application locally by running:
-
-```
-pipenv install
-```
-
-followed by
-
-```
-pipenv run python api.py
-```
-
-NOTE: **pipenv** can be tempremental and varies from machine to machine if the above steps do not work skip to **Running in Docker** below
-
