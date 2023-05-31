@@ -11,7 +11,7 @@ The application can be deployed as a Docker container.
 Firstly build the Docker image.
 
 > ⚠️ Note:
-> We specify the platform as linux/amd64 within the build and run commands. By default, Docker will use the host platform architecture which if you are on a Mac might not work when deploying your container on to Lunux platforms.
+> We specify the platform as linux/amd64 within the build and run commands. By default, Docker will use the host platform architecture which if you are on a Mac might not work when deploying your container on to Linux platforms.
 
 ```
 docker build --platform linux/amd64 -t bookstore-api:1.0 .
